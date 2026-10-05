@@ -1,0 +1,196 @@
+{
+  "info": {
+    "name": "InfoSeva Complaint Module",
+    "description": "API collection for the InfoSeva Complaint Module. Endpoints for filing, tracking, and filtering complaints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Complaint",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Rajesh Kumar\",\n  \"email\": \"rajesh.kumar@example.com\",\n  \"mobile\": \"9876543210\",\n  \"departmentId\": 2,\n  \"category\": \"Water Supply\",\n  \"priority\": \"Urgent\",\n  \"subject\": \"No water supply for 3 days\",\n  \"description\": \"There has been no water supply in our locality since Monday. Please resolve this immediately.\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/complaints",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "complaints"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search and Filter Complaints",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/complaints?departmentId=2&status=NEW&priority=HIGH&page=0&size=10&sortBy=createdAt&sortDir=desc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "complaints"
+          ],
+          "query": [
+            {
+              "key": "keyword",
+              "value": "water",
+              "disabled": true
+            },
+            {
+              "key": "departmentId",
+              "value": "2"
+            },
+            {
+              "key": "priority",
+              "value": "HIGH"
+            },
+            {
+              "key": "status",
+              "value": "NEW"
+            },
+            {
+              "key": "trackingNumber",
+              "value": "CMP-2026-000001",
+              "disabled": true
+            },
+            {
+              "key": "startDate",
+              "value": "2026-08-01T00:00:00",
+              "disabled": true
+            },
+            {
+              "key": "endDate",
+              "value": "2026-08-31T23:59:59",
+              "disabled": true
+            },
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            },
+            {
+              "key": "sortBy",
+              "value": "createdAt"
+            },
+            {
+              "key": "sortDir",
+              "value": "desc"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Complaint by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/complaints/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "complaints",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Track Complaint by Tracking Number",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/complaints/tracking/CMP-2026-000001",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "complaints",
+            "tracking",
+            "CMP-2026-000001"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Complaint",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Rajesh Kumar\",\n  \"email\": \"rajesh.kumar@example.com\",\n  \"mobile\": \"9876543210\",\n  \"departmentId\": 2,\n  \"category\": \"Water Supply\",\n  \"priority\": \"High\",\n  \"subject\": \"No water supply for 3 days - Updated\",\n  \"description\": \"Still waiting for a response. The situation is critical.\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/complaints/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "complaints",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Complaint",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/complaints/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "complaints",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}

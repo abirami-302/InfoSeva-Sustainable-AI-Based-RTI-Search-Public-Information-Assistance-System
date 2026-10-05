@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-gray-800 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gov-blue text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:bg-gov-blue-dark transition-all duration-200 shadow-sm hover:shadow-md active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-white text-gov-blue border border-gov-blue px-6 py-2.5 rounded-lg font-semibold text-sm hover:bg-gov-blue-50 transition-all duration-200 active:scale-95;
+  }
+  .btn-saffron {
+    @apply bg-gov-saffron text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:bg-gov-saffron-light transition-all duration-200 shadow-sm hover:shadow-md active:scale-95;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-card border border-gray-100 transition-all duration-200 hover:shadow-card-hover;
+  }
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-50 hover:text-gov-blue transition-all duration-150 cursor-pointer;
+  }
+  .sidebar-item.active {
+    @apply bg-gov-blue-50 text-gov-blue font-semibold border-l-4 border-gov-blue;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-gov-blue/30 focus:border-gov-blue transition-all;
+  }
+  .section-header {
+    @apply text-2xl font-bold text-gov-blue-dark font-display;
+  }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { @apply bg-gray-100; }
+::-webkit-scrollbar-thumb { @apply bg-gov-blue/30 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-gov-blue/50; }
+
+.tricolor-bar {
+  background: linear-gradient(to right, #FF6B00 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%);
+  height: 3px;
+}

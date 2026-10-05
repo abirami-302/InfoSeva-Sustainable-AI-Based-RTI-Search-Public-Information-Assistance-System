@@ -1,0 +1,187 @@
+{
+  "info": {
+    "name": "InfoSeva Scheme Module",
+    "description": "API collection for the InfoSeva Scheme Module. Contains endpoints for CRUD operations, fetching featured schemes, and advanced filtering.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Scheme",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"PM Kisan Samman Nidhi\",\n  \"description\": \"Financial benefit for farmers.\",\n  \"departmentId\": 1,\n  \"category\": \"Agriculture\",\n  \"eligibility\": \"All landholding farmers' families.\",\n  \"benefits\": \"Rs. 6000 per year.\",\n  \"requiredDocuments\": [\"Aadhaar Card\", \"Bank Passbook\"],\n  \"applicationProcess\": \"Apply online through the portal.\",\n  \"applicationUrl\": \"https://pmkisan.gov.in\",\n  \"officialWebsite\": \"https://pmkisan.gov.in\",\n  \"status\": \"ACTIVE\",\n  \"launchedYear\": 2019,\n  \"beneficiaryCount\": \"11 Crore+\",\n  \"tags\": [\"farmer\", \"agriculture\", \"subsidy\"],\n  \"featured\": true,\n  \"displayOrder\": 1\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/schemes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "schemes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Scheme",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"PM Kisan Samman Nidhi (Updated)\",\n  \"description\": \"Updated financial benefit for farmers.\",\n  \"departmentId\": 1,\n  \"category\": \"Agriculture\",\n  \"eligibility\": \"All landholding farmers' families.\",\n  \"benefits\": \"Rs. 6000 per year.\",\n  \"requiredDocuments\": [\"Aadhaar Card\", \"Bank Passbook\"],\n  \"applicationProcess\": \"Apply online through the portal.\",\n  \"applicationUrl\": \"https://pmkisan.gov.in\",\n  \"officialWebsite\": \"https://pmkisan.gov.in\",\n  \"status\": \"ACTIVE\",\n  \"launchedYear\": 2019,\n  \"beneficiaryCount\": \"11 Crore+\",\n  \"tags\": [\"farmer\", \"agriculture\"],\n  \"featured\": true,\n  \"displayOrder\": 1\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/schemes/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "schemes",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Scheme by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/schemes/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "schemes",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Scheme",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/schemes/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "schemes",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Featured Schemes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/schemes/featured",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "schemes",
+            "featured"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search and Filter Schemes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/schemes?keyword=farmer&status=ACTIVE&page=0&size=10&sortBy=createdAt&sortDir=desc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "schemes"
+          ],
+          "query": [
+            {
+              "key": "keyword",
+              "value": "farmer",
+              "description": "Search across title, description, category, and department"
+            },
+            {
+              "key": "departmentId",
+              "value": "1",
+              "disabled": true
+            },
+            {
+              "key": "category",
+              "value": "Agriculture",
+              "disabled": true
+            },
+            {
+              "key": "status",
+              "value": "ACTIVE"
+            },
+            {
+              "key": "featured",
+              "value": "true",
+              "disabled": true
+            },
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            },
+            {
+              "key": "sortBy",
+              "value": "createdAt"
+            },
+            {
+              "key": "sortDir",
+              "value": "desc"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}

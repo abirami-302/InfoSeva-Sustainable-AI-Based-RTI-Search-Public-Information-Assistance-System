@@ -1,0 +1,21 @@
+package com.auth.entity;
+
+public enum Profession {
+    STUDENT,
+    PRIVATE_EMPLOYEE,
+    GOVERNMENT_EMPLOYEE,
+    SELF_EMPLOYED,
+    BUSINESS_OWNER,
+    FARMER,
+    TEACHER,
+    DOCTOR,
+    ENGINEER,
+    LAWYER,
+    JOURNALIST,
+    RESEARCHER,
+    HOMEMAKER,
+    SOCIAL_WORKER,
+    UNEMPLOYED,
+    RETIRED,
+    OTHER
+}

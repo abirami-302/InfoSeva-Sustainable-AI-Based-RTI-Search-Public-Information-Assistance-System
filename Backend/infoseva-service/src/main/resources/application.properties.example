@@ -1,0 +1,37 @@
+server.port=8082
+
+# Oracle Database Configuration
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521/XEPDB1
+spring.datasource.username=YOUR_DB_USERNAME
+spring.datasource.password=YOUR_DB_PASSWORD
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.database-platform=org.hibernate.dialect.OracleDialect
+
+# --- Strongly Typed JWT Settings ---
+app.jwt.secret=YOUR_JWT_256BIT_SECRET
+app.jwt.expiration-ms=3600000
+
+# MongoDB Configuration
+spring.data.mongodb.uri=mongodb://localhost:27017/infoseva_db
+spring.data.mongodb.auto-index-creation=true
+
+spring.datasource.hikari.maximum-pool-size=20
+spring.datasource.hikari.minimum-idle=5
+
+# Swagger Multi-Service Grouping
+springdoc.swagger-ui.urls[0].name=InfoSeva Service
+springdoc.swagger-ui.urls[0].url=/v3/api-docs
+springdoc.swagger-ui.urls[1].name=Auth Service
+springdoc.swagger-ui.urls[1].url=http://localhost:8081/v3/api-docs
+
+# Document Storage Configuration
+app.storage.documents-dir=./uploads/documents
+spring.servlet.multipart.max-file-size=20MB
+spring.servlet.multipart.max-request-size=25MB
+
+# AI Service Integration
+ai.service.url=http://localhost:8000

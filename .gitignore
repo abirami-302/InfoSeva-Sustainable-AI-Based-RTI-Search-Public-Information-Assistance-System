@@ -1,0 +1,126 @@
+# =============================================================================
+# Dependencies & Package Managers
+# =============================================================================
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# =============================================================================
+# Build Outputs & Compiled Binaries
+# =============================================================================
+target/
+build/
+dist/
+out/
+bin/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+# =============================================================================
+# Python Environments & Bytecode
+# =============================================================================
+venv/
+.venv/
+env/
+.env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# =============================================================================
+# Local Environment & Secrets (.env files)
+# =============================================================================
+*.env
+*.env.*
+!.env.example
+!.env.*.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =============================================================================
+# AI & Vector Store Data (ChromaDB / Model Caches)
+# =============================================================================
+chroma_db/
+**/chroma_db/
+chroma.sqlite3
+*.bin
+*.pickle
+*.parquet
+**/data/
+
+# =============================================================================
+# User Uploaded Documents & Test Assets (Storage)
+# =============================================================================
+uploads/
+**/uploads/
+test-documents/
+**/test-documents/
+*.pdf
+*.docx
+*.xlsx
+
+# =============================================================================
+# Scratch / Developer / Testing Scripts & Local Utilities
+# =============================================================================
+scratch_scripts/
+**/scratch_scripts/
+scripts/
+**/scripts/
+check_*.py
+discover_*.py
+download_*.py
+expand_*.py
+filter_*.py
+test_*.py
+*.ps1
+QueryDb.java
+**/QueryDb.java
+test_direct_ai.py
+test_vector.py
+audit.js
+1. SCHEME DYNAMIC FORM.txt
+
+# =============================================================================
+# Archives & Compressed Backups
+# =============================================================================
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# =============================================================================
+# Logs & Databases
+# =============================================================================
+*.log
+logs/
+**/logs/
+*.sqlite
+*.sqlite3
+*.db
+
+# =============================================================================
+# IDE & System Files
+# =============================================================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
