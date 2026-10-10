@@ -241,7 +241,7 @@ const INITIAL_API_SOURCES = [
     responseFormat: 'JSON',
     authType: 'Bearer Token',
     apiKey: '',
-    bearerToken: 'eyJhbGciOiJIUzI1NiJ9...',
+    bearerToken: 'YOUR_SAMPLE_BEARER_TOKEN',
     customHeaders: 'X-Source: InfoSeva',
     category: 'Knowledge Base',
     version: 'v1',

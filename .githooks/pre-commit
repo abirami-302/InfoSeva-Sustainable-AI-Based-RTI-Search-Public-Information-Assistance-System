@@ -1,0 +1,33 @@
+#!/bin/sh
+# Git pre-commit hook to prevent secret leaks using Gitleaks
+
+# Ensure gitleaks can be found on Windows Git Bash / sh / PowerShell / macOS / Linux
+if ! command -v gitleaks >/dev/null 2>&1; then
+    WINGET_PKG_PATH="/c/Users/abira/AppData/Local/Microsoft/WinGet/Packages/Gitleaks.Gitleaks_Microsoft.Winget.Source_8wekyb3d8bbwe"
+    export PATH="$PATH:$WINGET_PKG_PATH:/c/Users/abira/AppData/Local/Microsoft/WinGet/Links:/usr/local/bin:/opt/homebrew/bin"
+fi
+
+if ! command -v gitleaks >/dev/null 2>&1; then
+    echo "=========================================================================="
+    echo "ERROR: 'gitleaks' executable could not be found in PATH."
+    echo "Commit aborted to prevent secret leaks."
+    echo "Please install Gitleaks (e.g. winget install gitleaks.gitleaks or brew install gitleaks)"
+    echo "and ensure it is in your PATH before committing."
+    echo "=========================================================================="
+    exit 1
+fi
+
+echo "Running pre-commit secret scan with Gitleaks..."
+gitleaks git --pre-commit --staged --redact -v
+
+STATUS=$?
+if [ $STATUS -ne 0 ]; then
+    echo ""
+    echo "=========================================================================="
+    echo "COMMIT REJECTED: Gitleaks detected potential secrets in your staged changes."
+    echo "Please remove or redact the secrets before committing."
+    echo "=========================================================================="
+    exit 1
+fi
+
+exit 0

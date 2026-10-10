@@ -1,0 +1,5 @@
+# Gitleaks ignore list for false positives in historical commits.
+# Format: <fingerprint>
+
+# Initial commit (884760b) mock sample UI placeholder in DataManagerContext.jsx (resolved in working tree to 'YOUR_SAMPLE_BEARER_TOKEN')
+884760b959c69a20576cf112e5ef2817f9700266:Frontend/src/context/DataManagerContext.jsx:generic-api-key:244
